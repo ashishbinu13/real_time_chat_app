@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <div class="logo">
+    <img
+      src="https://png.pngitem.com/pimgs/s/148-1489584_chat-png-icon-free-download-searchpng-blue-chat.png"
+      alt=""
+    />
+  </div>
+  <div class="text-center mt-4 name">Creat an Account</div>
+  <form class="p-3 mt-3" (ngSubmit)="signup()">
+    <div class="form-field d-flex align-items-center">
+      <span class="far fa-user"></span>
+      <input type="text" name="name" id="name" placeholder="Enter your Name" />
+    </div>
+
+    <div class="form-field d-flex align-items-center">
+      <span class="far fa-user"></span>
+      <input type="text" name="email" id="email" placeholder="Email" />
+    </div>
+
+    <div class="form-field d-flex align-items-center">
+      <span class="far fa-user"></span>
+      <input type="text" name="userName" id="userName" placeholder="Username" />
+    </div>
+
+    <div class="form-field d-flex align-items-center">
+      <span class="fas fa-key"></span>
+      <input type="password" name="password" id="pwd" placeholder="Password" />
+    </div>
+
+    <div class="form-field d-flex align-items-center">
+      <span class="fas fa-key"></span>
+      <input
+        type="password"
+        name="cPassword"
+        id="cPwd"
+        placeholder="Confirm Password"
+      />
+    </div>
+
+    <button type="submit" class="btn mt-3">Signup</button>
+  </form>
+  <div class="text-center fs-6">
+    <a routerLink="">Already have an Account?</a>
+  </div>
+</div>
