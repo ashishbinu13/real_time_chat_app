@@ -4,7 +4,7 @@ const createHttpError = require("http-errors");
 
 const router = express.Router();
 
-router.post("/login", async (req, res, next) => {
+router.post("/signup", async (req, res, next) => {
   try {
   } catch (error) {
     next(error);
