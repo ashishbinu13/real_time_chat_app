@@ -6,16 +6,31 @@
     />
   </div>
   <div class="text-center mt-4 name">Chat-App</div>
-  <form class="p-3 mt-3">
+  <form class="p-3 mt-3" (ngSubmit)="login()">
     <div class="form-field d-flex align-items-center">
       <span class="far fa-user"></span>
-      <input type="text" name="userName" id="userName" placeholder="Username" />
+      <input
+        [(ngModel)]="user.username"
+        type="text"
+        name="userName"
+        id="userName"
+        placeholder="Username"
+      />
     </div>
     <div class="form-field d-flex align-items-center">
       <span class="fas fa-key"></span>
-      <input type="password" name="password" id="pwd" placeholder="Password" />
+      <input
+        [(ngModel)]="user.password"
+        type="password"
+        name="password"
+        id="pwd"
+        placeholder="Password"
+      />
     </div>
-    <button class="btn mt-3">Login</button>
+    <div *ngIf="isInvalid" class="d-flex align-items-center">
+      <small class="errorMessage"> {{ errorMessage }}</small>
+    </div>
+    <button type="submit" class="btn mt-3">Login</button>
   </form>
   <div class="text-center fs-6">
     <a routerLink="signup">Create an Account</a>

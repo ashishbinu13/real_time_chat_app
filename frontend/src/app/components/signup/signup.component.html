@@ -9,22 +9,46 @@
   <form class="p-3 mt-3" (ngSubmit)="signup()">
     <div class="form-field d-flex align-items-center">
       <span class="far fa-user"></span>
-      <input type="text" name="name" id="name" placeholder="Enter your Name" />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        [(ngModel)]="user.name"
+        placeholder="Enter your Name"
+      />
     </div>
 
     <div class="form-field d-flex align-items-center">
       <span class="far fa-user"></span>
-      <input type="text" name="email" id="email" placeholder="Email" />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        [(ngModel)]="user.email"
+        placeholder="Email"
+      />
     </div>
 
     <div class="form-field d-flex align-items-center">
       <span class="far fa-user"></span>
-      <input type="text" name="userName" id="userName" placeholder="Username" />
+      <input
+        type="text"
+        name="userName"
+        id="userName"
+        [(ngModel)]="user.username"
+        placeholder="Username"
+      />
     </div>
 
     <div class="form-field d-flex align-items-center">
       <span class="fas fa-key"></span>
-      <input type="password" name="password" id="pwd" placeholder="Password" />
+      <input
+        type="password"
+        name="password"
+        id="pwd"
+        [(ngModel)]="user.password"
+        placeholder="Password"
+      />
     </div>
 
     <div class="form-field d-flex align-items-center">
@@ -34,7 +58,12 @@
         name="cPassword"
         id="cPwd"
         placeholder="Confirm Password"
+        [(ngModel)]="user.cPassword"
       />
+    </div>
+
+    <div *ngIf="isInvalid" class="d-flex align-items-center">
+      <small class="errorMessage"> {{ errorMessage }}</small>
     </div>
 
     <button type="submit" class="btn mt-3">Signup</button>
