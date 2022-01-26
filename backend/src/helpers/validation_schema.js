@@ -31,4 +31,15 @@ const loginSchema = Joi.object({
   password: Joi.string().required(),
 });
 
-module.exports = { signupSchema, loginSchema };
+const roomSchema = Joi.object({
+  roomName: Joi.string().required(),
+  createdBy: Joi.string().required(),
+  members: Joi.array().items(
+    Joi.object({
+      name: Joi.string().required(),
+      username: Joi.string().required(),
+    })
+  ),
+});
+
+module.exports = { signupSchema, loginSchema, roomSchema };

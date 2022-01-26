@@ -18,6 +18,35 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "username": "user",
+    "username": "user1",
     "password": "1234"
 }
+
+### Create Chat Room
+
+POST http://localhost:3000/chatRooms/createRoom
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDMyMTMyNDcsImV4cCI6MTY0MzIxNjg0NywiYXVkIjoidXNlcjEiLCJpc3MiOiJjaGF0LWFwcCJ9.pVWtsAvmOwL9Y5sv_0Oymxg18anQy_0eiK1kaMs90EE
+Content-Type: application/json
+
+{
+    "roomName": "test1",
+    "createdBy": "user1",
+    "members": [
+        {
+            "name": "User",
+            "username": "user"
+        },
+        {
+            "name": "User1",
+            "username": "user1"
+        }
+    ]
+}
+
+
+### Get Chat Rooms
+
+
+GET  http://localhost:3000/chatRooms/getRooms
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDMyMTMyNDcsImV4cCI6MTY0MzIxNjg0NywiYXVkIjoidXNlcjEiLCJpc3MiOiJjaGF0LWFwcCJ9.pVWtsAvmOwL9Y5sv_0Oymxg18anQy_0eiK1kaMs90EE
+Content-Type: application/json

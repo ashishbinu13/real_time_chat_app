@@ -8,6 +8,7 @@ require("./src/helpers/init_mongodb");
 
 // modules
 const AuthRoute = require("./src/routes/auth.routes");
+const ChatRoomRoute = require("./src/routes/chatRooms.routes");
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(morgan("dev"));
 // routes
 
 app.use("/auth", AuthRoute);
+app.use("/chatRooms", ChatRoomRoute);
 
 // error handling
 
