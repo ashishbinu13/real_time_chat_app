@@ -3,6 +3,7 @@ const express = require("express");
 const createHttpError = require("http-errors");
 const morgan = require("morgan");
 const cors = require("cors");
+const socket = require("socket.io");
 require("dotenv").config();
 require("./src/helpers/init_mongodb");
 
